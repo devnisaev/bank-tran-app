@@ -3,14 +3,13 @@
 
 ### Insert Sample Accounts
 
+You can create tables in 'bank' database (they can be auto created)
+
+and 
+
 You can populate the `accounts` table with some sample data using the following SQL:
 
 ```sql
-INSERT INTO accounts (id, client_id, balance, version) VALUES
-  ('11111111-1111-1111-1111-111111111111', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 1000.00, 0),
-  ('22222222-2222-2222-2222-222222222222', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', 500.00, 0),
-  ('33333333-3333-3333-3333-333333333333', 'cccccccc-cccc-cccc-cccc-cccccccccccc', 2000.00, 0);
-
 
 create table public.accounts
 (
@@ -84,6 +83,12 @@ alter table public.transfers
 
 create unique index idx_transfer_idempotency_key
     on public.transfers (idempotency_key);
+
+
+INSERT INTO accounts (id, client_id, balance, version) VALUES
+                                                           ('11111111-1111-1111-1111-111111111111', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 1000.00, 0),
+                                                           ('22222222-2222-2222-2222-222222222222', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', 500.00, 0),
+                                                           ('33333333-3333-3333-3333-333333333333', 'cccccccc-cccc-cccc-cccc-cccccccccccc', 2000.00, 0);
 
 ```
 
